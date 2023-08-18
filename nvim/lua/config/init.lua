@@ -1,0 +1,6 @@
+require("config.neosolarized")
+require("config.lsp")
+require("config.treesitter")
+require("config.nvim-tree")
+require("config.lualine")
+require("config.git")

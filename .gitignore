@@ -1,0 +1,8 @@
+fish/completions/
+fish/fish_variables
+fish/functions/
+iterm2/AppSupport
+nvim/lazy-lock.json
+raycast/
+
+**/**/.DS_Store
