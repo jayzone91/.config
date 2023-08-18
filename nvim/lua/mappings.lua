@@ -19,6 +19,9 @@ map("n", "<leader><Down>", "Yp", { desc = "Duplicate Line Down" })
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 map("t", "<esc>", "<C-\\><C-N>", { desc = "Leave Terminal Mode" })
 
+-- Format with prettier.
+map("n", "<leader>fp", ":%!npx prettier --stdin-filepath %<cr>:w<cr>", { desc = "Format File with Prettier" })
+
 -- LSP
 map("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
