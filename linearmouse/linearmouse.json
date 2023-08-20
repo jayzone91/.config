@@ -1,6 +1,19 @@
 {
   "$schema" : "https:\/\/schema.linearmouse.app\/0.9.3",
   "schemes" : [
-
+    {
+      "buttons" : {
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "MX Master",
+          "serialNumber" : "8A1F76D04022F350",
+          "productID" : "0xb017",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      }
+    }
   ]
 }
