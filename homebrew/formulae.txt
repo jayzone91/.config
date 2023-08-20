@@ -1,0 +1,13 @@
+bat
+cmake
+curl
+exa
+fish
+fzf
+gettext
+git
+lua-language-server
+ninja
+node
+ripgrep
+webp

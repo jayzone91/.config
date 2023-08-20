@@ -1,0 +1,14 @@
+appcleaner
+cheatsheet
+font-fira-code-nerd-font
+gimp
+miniconda
+obsidian
+quiet-reader
+raycast
+shottr
+hiddenbar
+tempbox
+keka
+visual-studio-code
+linearmouse
