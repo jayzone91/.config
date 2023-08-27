@@ -22,6 +22,9 @@ wk.register({
     },
     z = {
       name = "Zen"
+    },
+    s = {
+      name = "+screen"
     }
   }
 })
