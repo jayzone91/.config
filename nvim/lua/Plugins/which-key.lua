@@ -12,11 +12,12 @@ return {
         ["<space>"] = "Space",
         ["<cr>"] = "Return",
         ["<tab>"] = "TAB",
-        ["<down>"] = "",
-        ["<left>"] = "",
-        ["<up>"] = "",
-        ["<right>"] = "",
+        ["<Down>"] = "",
+        ["<Left>"] = "",
+        ["<Up>"] = "",
+        ["<Right>"] = "",
         ["<esc>"] = "ESC",
+        ["<bs>"] = "Backspace"
       }
     }
   }
