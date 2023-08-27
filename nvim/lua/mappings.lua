@@ -16,6 +16,14 @@ map("n", "<A-Down>", "<cmd>m +1<CR>", { desc = "Move Text Down one Line" })
 map("n", "<leader><Up>", "YP", { desc = "Duplicate Line Up" })
 map("n", "<leader><Down>", "Yp", { desc = "Duplicate Line Down" })
 
+-- Window Management
+map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "[S]plit [S]creen" })
+map("n", "<leader>st", "<cmd>tabnew<cr>", { desc = "New Tab" })
+map("n", "<leader>sw", "<cmd>tabclose<cr>", { desc = "Close Active Tab" })
+map("n", "<Tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+map("n", "<S-Tab>", "<cmd>tabprev<cr>", { desc = "Prev Tab" })
+
+
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 map("t", "<esc>", "<C-\\><C-N>", { desc = "Leave Terminal Mode" })
 
