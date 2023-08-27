@@ -18,6 +18,7 @@ map("n", "<leader><Down>", "Yp", { desc = "Duplicate Line Down" })
 
 -- Window Management
 map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "[S]plit [S]creen" })
+map("n", "<leader>sq", "<cmd>close<cr>", { desc = "Close Window" })
 map("n", "<leader>st", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader>sw", "<cmd>tabclose<cr>", { desc = "Close Active Tab" })
 map("n", "<Tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })

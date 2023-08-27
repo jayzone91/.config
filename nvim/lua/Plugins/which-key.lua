@@ -11,7 +11,12 @@ return {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         ["<space>"] = "Space",
         ["<cr>"] = "Return",
-        ["<tab>"] = "TAB"
+        ["<tab>"] = "TAB",
+        ["<down>"] = "",
+        ["<left>"] = "",
+        ["<up>"] = "",
+        ["<right>"] = "",
+        ["<esc>"] = "ESC",
       }
     }
   }
