@@ -1,0 +1,26 @@
+Install with Winget:
+M2Team.NanaZip
+Microsoft.PowerToys
+JanDeDobbeleer.OhMyPosh
+Microsoft.PowerShell
+Neovim.Neovim.Nightly
+
+Install with Scoop:
+7zip
+FiraCode
+gcc
+komorebi
+lua-language-server
+neofetch
+tipgrep
+wezterm
+whkd
+zig
+
+Scoop Buckets:
+extras
+nerd-fonts
+
+Install with Choco:
+
+make
