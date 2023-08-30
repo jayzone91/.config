@@ -9,6 +9,8 @@ require("nvim-treesitter.configs").setup({
     "rust",
     "markdown",
     "prisma",
+    "c",
+    "cpp",
   },
   sync_install = true,
   auto_install = true,

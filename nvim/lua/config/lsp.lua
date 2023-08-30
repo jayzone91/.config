@@ -7,7 +7,8 @@ require("mason-lspconfig").setup({
     "pyright",
     "rust_analyzer",
     "marksman",
-    "prismals"
+    "prismals",
+    "clangd",
   },
   automatic_installation = true,
 })
@@ -79,6 +80,8 @@ lspconfig.rust_analyzer.setup {
 lspconfig.marksman.setup {}
 
 lspconfig.prismals.setup {}
+
+lspconfig.clangd.setup {}
 
 local cmp = require("cmp")
 cmp.setup {
