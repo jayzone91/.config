@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
     "marksman",
     "prismals",
     "clangd",
+    "emmet_ls"
   },
   automatic_installation = true,
 })
@@ -16,6 +17,8 @@ require("mason-lspconfig").setup({
 
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local lspconfig = require("lspconfig")
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -82,6 +85,32 @@ lspconfig.marksman.setup {}
 lspconfig.prismals.setup {}
 
 lspconfig.clangd.setup {}
+
+lspconfig.emmet_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "svelte",
+    "pug",
+    "typescriptreact",
+    "vue"
+  },
+  init_options = {
+    html = {
+      options = {
+        ["bem.enabled"] = true,
+      }
+    }
+  }
+})
 
 local cmp = require("cmp")
 cmp.setup {
