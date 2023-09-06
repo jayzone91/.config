@@ -83,3 +83,10 @@ map("n", "<leader>xx", function() require("trouble").open() end, { desc = "Open 
 map("n", "<leader>zz",
   function() require("zen-mode").toggle({ window = { width = .85 } }) end,
   { desc = "Toggle Zen Mode" })
+
+-- Harpoon
+map("n", "<leader>ha", function() require("harpoon.mark").add_file() end, { desc = "Add File" })
+map("n", "<leader>ht", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Menu" })
+map("n", "<leader>hn", function() require("harpoon.ui").nav_next() end, { desc = "Navigate to Next entry" })
+map("n", "<leader>hp", function() require("harpoon.ui").nav_prev() end, { desc = "Navigate to Prev entry" })
+map("n", "<leader>hc", function() require("harpoon.mark").clear_all() end, { desc = "Clear All Entries" })

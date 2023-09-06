@@ -25,6 +25,9 @@ wk.register({
     },
     s = {
       name = "+screen"
+    },
+    h = {
+      name = "+harpoon"
     }
   }
 })

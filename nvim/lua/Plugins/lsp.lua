@@ -5,9 +5,22 @@ return {
       'hrsh7th/nvim-cmp',         -- Autocompletion plugin
       'hrsh7th/cmp-nvim-lsp',     -- LSP source for nvim-cmp
       'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
-      'L3MON4D3/LuaSnip',         -- Snippets plugin
+      {'L3MON4D3/LuaSnip',
+  build = (not jit.os:find("Windows"))
+    and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
+    or nil,
+    opts = {
+      history = true,
+      delete_check_events = "TextChanged",
+    },
+    },         -- Snippets plugin
       "folke/neodev.nvim",
-      { "rafamadriz/friendly-snippets" },
+      {
+        "rafamadriz/friendly-snippets",
+        config = function()
+          require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+      },
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
     },
