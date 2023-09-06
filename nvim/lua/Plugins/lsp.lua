@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = true,
     dependencies = {
       'hrsh7th/nvim-cmp',         -- Autocompletion plugin
       'hrsh7th/cmp-nvim-lsp',     -- LSP source for nvim-cmp

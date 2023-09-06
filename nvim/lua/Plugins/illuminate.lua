@@ -9,6 +9,7 @@ return {
         providers = { "lsp" },
       },
     },
+    lazy = true,
     config = function(_, opts)
       require("illuminate").configure(opts)
       local function map(key, dir, buffer)

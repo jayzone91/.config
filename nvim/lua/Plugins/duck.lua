@@ -1,3 +1,3 @@
 return {
-  "tamton-aquib/duck.nvim"
+  { "tamton-aquib/duck.nvim", lazy = true }
 }

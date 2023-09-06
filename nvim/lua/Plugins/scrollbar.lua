@@ -1,10 +1,12 @@
 return {
   {
     "petertriho/nvim-scrollbar",
+    lazy = false,
     opts = {}
   },
   {
     "karb94/neoscroll.nvim",
+    lazy = false,
     opts = {
       hide_cursor = true,
       stop_eof = true,

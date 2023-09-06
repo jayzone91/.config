@@ -1,6 +1,7 @@
 return {
   'glepnir/dashboard-nvim',
   event = "VimEnter",
+  lazy = false,
   config = function()
     require("dashboard").setup {
       theme = "hyper",
@@ -23,18 +24,6 @@ return {
             action = "Telescope find_files",
             key = "f",
           },
-          {
-            desc = " Apps",
-            group = "Diagnostics",
-            action = "Telesope app",
-            key = "a",
-          },
-          {
-            desc = " dotfiles",
-            group = "Number",
-            action = "Telescope dotfiles",
-            key = "d",
-          }
         }
       }
     }

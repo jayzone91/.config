@@ -9,6 +9,7 @@ return {
     },
     opts = {
 
-    }
+    },
+    lazy = true
   }
 }

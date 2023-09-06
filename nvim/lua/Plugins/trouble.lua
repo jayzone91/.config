@@ -3,6 +3,7 @@ return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = { use_daignostic_signs = true },
+    lazy = true,
     cmd = { "TroubleToggle", "Trouble" },
     keys = {
       { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics (Trouble)" },
