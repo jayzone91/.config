@@ -90,3 +90,13 @@ map("n", "<leader>ht", function() require("harpoon.ui").toggle_quick_menu() end,
 map("n", "<leader>hn", function() require("harpoon.ui").nav_next() end, { desc = "Navigate to Next entry" })
 map("n", "<leader>hp", function() require("harpoon.ui").nav_prev() end, { desc = "Navigate to Prev entry" })
 map("n", "<leader>hc", function() require("harpoon.mark").clear_all() end, { desc = "Clear All Entries" })
+
+-- Vim be good
+map("n", "<leader>sg", "<cmd>VimBeGood<CR>", { desc = "Let´s play a Game!" })
+
+-- TSC
+map("n", "<leader>tc", "<cmd>TSC<cr>", { desc = "Type Checking" })
+
+-- Let the Ducks out
+map("n", "<leader>dd", function() require("duck").hatch() end, { desc = "Hatch a Duck" })
+map("n", "<leader>dk", function() require("duck").cook() end, { desc = "Cook the Duck" })
