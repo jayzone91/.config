@@ -28,7 +28,25 @@ vim.opt.backspace = { "indent", "eol", "start" }
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.opt.iskeyword:append("-")
-vim.o.pumblend = 5
+vim.o.pumblend = 10
+vim.opt.pumheight = 10
+
+vim.opt.autowrite = true
+vim.opt.conceallevel = 3
+vim.opt.formatoptions = "jcroqlnt"
+vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.inccommand = "nosplit"
+vim.opt.laststatus = 0
+vim.opt.list = true
+vim.opt.shiftround = true
+vim.opt.shortmess:append({
+  W = true, I = true, c = true
+})
+vim.opt.wildmode = "longest:full,full"
+vim.g.markdown_recommended_style = 0
+
+
 
 local has = vim.fn.has
 if has("macunix") == 1 then
@@ -43,15 +61,3 @@ end
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
--------------------------
---- Highlight on Yank ---
--------------------------
-
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
-})

@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("base") -- Base Config
-
+require("autocmd")
 -- Install Lazy
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -18,7 +18,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
-  { import = "Plugins" },
+  defaults = {
+    lazy = true,
+    version = false,
+  },
+  checker = {
+    enabled = true,
+  },
+  spec = {
+    { import = "Plugins" },
+  }
 }, {
 })
 
