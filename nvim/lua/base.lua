@@ -14,6 +14,7 @@ vim.o.timeoutlen = 300
 vim.o.updatetime = 300
 vim.o.writebackup = false
 vim.o.tabstop = 2
+vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.smarttab = true
 vim.o.smartindent = true
@@ -30,7 +31,7 @@ vim.o.splitbelow = true
 vim.opt.iskeyword:append("-")
 vim.o.pumblend = 10
 vim.opt.pumheight = 10
-
+vim.o.wrap = false
 vim.opt.autowrite = true
 vim.opt.conceallevel = 3
 vim.opt.formatoptions = "jcroqlnt"
@@ -45,7 +46,7 @@ vim.opt.shortmess:append({
 })
 vim.opt.wildmode = "longest:full,full"
 vim.g.markdown_recommended_style = 0
-
+vim.o.colorcolumn = "75"
 
 
 local has = vim.fn.has
@@ -60,4 +61,3 @@ end
 
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
-

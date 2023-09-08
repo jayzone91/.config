@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("base") -- Base Config
-require("autocmd")
 -- Install Lazy
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -32,4 +31,5 @@ require("lazy").setup({
 })
 
 require("config")
+require("autocmd")
 require("mappings")
