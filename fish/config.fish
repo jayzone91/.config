@@ -4,6 +4,7 @@ end
 
 set fish_greeting ""
 
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
