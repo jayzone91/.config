@@ -6,7 +6,7 @@ wk.register({
       name = "+file||format"
     },
     c = {
-      name = "+ca"
+      name = "+Code Actions"
     },
     g = {
       name = "+git"
@@ -28,6 +28,12 @@ wk.register({
     },
     h = {
       name = "+harpoon"
+    },
+    d = {
+      name = "+The Ducks"
+    },
+    t = {
+      name = "+Types"
     }
   }
 })
