@@ -37,13 +37,15 @@ map("n", "rn", vim.lsp.buf.rename, { desc = "Rename" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 map("n", "gr", vim.lsp.buf.references, { desc = "[G]oto [R]eferences" })
 
+map("n", "<leader>ts", "<cmd>setlocal spell spelllang=de<cr>", { desc = "Toggle Spellcheck DE" })
+
 -- Plugin Mappings
 
 -- nvim-tree
 map("n",
-    "<leader>pv",
-    "<cmd>NvimTreeToggle<cr>",
-    { desc = "Open Filebrowser" })
+  "<leader>pv",
+  "<cmd>NvimTreeToggle<cr>",
+  { desc = "Open Filebrowser" })
 
 -- Telescope
 local telescope = require("telescope.builtin")
@@ -68,8 +70,8 @@ map("n", "<leader><space>", telescopeBuiltin.buffers, { desc = "Show Buffer" })
 
 -- Zen Mode
 map("n", "<leader>zz",
-    function() require("zen-mode").toggle({ window = { width = .85 } }) end,
-    { desc = "Toggle Zen Mode" })
+  function() require("zen-mode").toggle({ window = { width = .85 } }) end,
+  { desc = "Toggle Zen Mode" })
 
 -- Harpoon
 map("n", "<leader>ha", function() require("harpoon.mark").add_file() end, { desc = "Add File" })
@@ -77,3 +79,6 @@ map("n", "<leader>ht", function() require("harpoon.ui").toggle_quick_menu() end,
 map("n", "<leader>hn", function() require("harpoon.ui").nav_next() end, { desc = "Navigate to Next entry" })
 map("n", "<leader>hp", function() require("harpoon.ui").nav_prev() end, { desc = "Navigate to Prev entry" })
 map("n", "<leader>hc", function() require("harpoon.mark").clear_all() end, { desc = "Clear All Entries" })
+
+-- Markdown Preview
+map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown Preview" })
