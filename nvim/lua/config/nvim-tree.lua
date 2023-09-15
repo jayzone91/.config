@@ -1,7 +1,5 @@
-vim.g.loaded_netwr = 1
-vim.g.leaded_netrwPlugin = 1
-
-vim.o.termguicolors = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
@@ -13,11 +11,9 @@ require("nvim-tree").setup({
     root_folder_label = false,
     highlight_git = true,
     highlight_opened_files = "none",
-
     indent_markers = {
-      enable = false,
+      enable = false
     },
-
     icons = {
       show = {
         file = true,
@@ -25,7 +21,6 @@ require("nvim-tree").setup({
         folder_arrow = true,
         git = false,
       },
-
       glyphs = {
         default = "󰈚",
         symlink = "",
@@ -58,7 +53,7 @@ require("nvim-tree").setup({
     }
   },
   filters = {
-    dotfiles = false,
+    dotfiles = false
   },
   disable_netrw = true,
   hijack_netrw = true,

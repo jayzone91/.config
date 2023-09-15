@@ -1,11 +1,8 @@
--- plugins/telescope.lua:
 return {
   {
-    'nvim-telescope/telescope.nvim',
-    lazy = false,
-    -- tag = '0.1.2',
-    branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = { "nvim-lua/plenary.nvim" },
     opts = function(_, opts)
       local function flash(prompt_bufnr)
         require("flash").jump({
@@ -30,7 +27,5 @@ return {
       })
     end,
   },
-
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }

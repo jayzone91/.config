@@ -1,7 +1,7 @@
-require("lualine").setup {
+require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "solarized_dark",
+    theme = "catppuccin"
   },
   sections = {
     lualine_a = { 'mode' },
@@ -42,4 +42,4 @@ require("lualine").setup {
   },
   tabline = {},
   extensions = { 'fugitive' }
-}
+})

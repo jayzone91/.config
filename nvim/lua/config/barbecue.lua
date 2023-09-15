@@ -1,2 +1,1 @@
-require("barbecue").setup({
-})
+require("barbecue").setup()

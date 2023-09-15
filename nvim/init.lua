@@ -1,9 +1,15 @@
+----------------
+--- Init.lua ---
+----------------
+
+-- Set Leader-Key first, then load Plugins
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("base") -- Base Config
--- Install Lazy
+-- Load Neovim Config
+require("base")
 
+-- Check if Lazy is installed, if not install it
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -15,21 +21,21 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   defaults = {
     lazy = true,
     version = false,
   },
-  checker = {
-    enabled = true,
-  },
+  checker = { enabled = true },
   spec = {
-    { import = "Plugins" },
-  }
-}, {
-})
+    { import = "Plugins" }, -- Import every File in Plugins Folder
+  },
+}, {})
 
-require("config")
-require("autocmd")
-require("mappings")
+require("Config")   -- Load Plugin Config
+
+require("autocmd")  -- Load Autocmds
+
+require("mappings") -- Load your custom Mappings

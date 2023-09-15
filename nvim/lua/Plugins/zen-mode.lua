@@ -1,3 +1,6 @@
 return {
-  { "folke/zen-mode.nvim", opts = {}, lazy = true }
+  {
+    "folke/zen-mode.nvim",
+    opts = {},
+  }
 }

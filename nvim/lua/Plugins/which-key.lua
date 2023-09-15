@@ -4,20 +4,19 @@ return {
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 300
+      vim.o.timeoutlen = 200
     end,
     opts = {
       key_labels = {
-        -- override the label used to display some keys. It doesn't effect WK in any other way.
         ["<space>"] = "Space",
         ["<cr>"] = "Return",
-        ["<tab>"] = "TAB",
+        ["<tab>"] = "Tab",
         ["<Down>"] = "",
         ["<Left>"] = "",
         ["<Up>"] = "",
         ["<Right>"] = "",
         ["<esc>"] = "ESC",
-        ["<bs>"] = "Backspace"
+        ["<bs>"] = "Backspace",
       }
     }
   }

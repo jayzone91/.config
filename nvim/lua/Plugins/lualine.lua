@@ -1,9 +1,6 @@
 return {
   {
-    'nvim-lualine/lualine.nvim',
-    lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons"
-    },
+    "nvim-lualine/lualine.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
   }
 }

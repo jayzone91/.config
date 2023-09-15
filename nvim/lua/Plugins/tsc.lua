@@ -1,11 +1,8 @@
 return {
-  {
-    "dmmulroy/tsc.nvim",
-    lazy = true,
-    opts = {
-      flags = {
-        build = true,
-      }
-    }
-  }
+  "dmmulroy/tsc.nvim",
+  opts = {
+    flags = {
+      build = true,
+    },
+  },
 }
