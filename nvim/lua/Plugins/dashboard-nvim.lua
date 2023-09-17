@@ -9,12 +9,6 @@ return {
           week_header = { enable = true },
           shortcut = {
             {
-              desc = "Update",
-              group = "@property",
-              action = "LazyUpdate",
-              key = "u",
-            },
-            {
               icon = " ",
               icon_hl = "@variable",
               desc = "Files",

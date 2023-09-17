@@ -1,5 +1,11 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
+  nvm use lts
+  brew update
+  brew upgrade
+  clear
+  pwd
+  exa -l -g --icons --color auto
 end
 
 set fish_greeting ""
