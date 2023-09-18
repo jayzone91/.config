@@ -1,0 +1,1 @@
+lua require("telescope.builtin").current_buffer_fuzzy_find({ sorter = require('telescope.sorters').get_substr_matcher({})})
