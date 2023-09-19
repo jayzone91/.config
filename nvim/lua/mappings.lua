@@ -22,6 +22,10 @@ map("t", "<esc>", "<C-\\><C-N>", { desc = "Leave Terminal Mode" })
 
 -- Window Management
 map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "[S]plit [S]creen" })
+map("n", "<c-down>", "<cmd>wincmd j<cr>", { desc = "Move to lower Window" })
+map("n", "<c-up>", "<cmd>wincmd k<cr>", { desc = "Move to upper Window" })
+map("n", "<c-left>", "<cmd>wincmd h<cr>", { desc = "Move to left Window" })
+map("n", "<c-right>", "<cmd>wincmd l<cr>", { desc = "Move to right Window" })
 map("n", "<leader>sq", "<cmd>close<cr>", { desc = "Close Window" })
 map("n", "<leader>st", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader>sw", "<cmd>tabclose<cr>", { desc = "Close Active Tab" })
@@ -96,3 +100,7 @@ map("n", "<leader>lk", "<cmd>Legendary keymaps<cr>", { desc = "Search Keymaps" }
 map("n", "<leader>lc", "<cmd>Legendary commands<cr>", { desc = "Search Commands" })
 map("n", "<leader>lf", "<cmd>Legendary function<cr>", { desc = "Search Functions" })
 map("n", "<leader>la", "<cmd>Legendary autocmds<cr>", { desc = "Search Autocmds" })
+
+-- ToggleTerm
+map("n", "<leader>tth", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Toggle Terminal Horizontal" })
+map("n", "<leader>ttv", "<cmd>ToggleTerm direction=vertical size=40<cr>", { desc = "Toggle Termimal Vertical" })
