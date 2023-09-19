@@ -50,13 +50,15 @@ map("n",
 
 
 -- Trouble
-map("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
-map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
-map("n", "K", vim.lsp.buf.hover, { desc = "Somethin Hover" })
-map("n", "gi", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
-map("n", "rn", vim.lsp.buf.rename, { desc = "Rename" })
-map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
-map("n", "gr", vim.lsp.buf.references, { desc = "[G]oto [R]eferences" })
+local trouble = require("trouble")
+map("n", "<leader>xx", function() trouble.open() end, { desc = "Open Trouble" })
+map("n", "<leader>xw", function() trouble.open("workspace_diagnostics") end, { desc = "Open Workspace Diag" })
+map("n", "<leader>xd", function() trouble.open("document_diagnostics") end, { desc = "Open Document Diag" })
+map("n", "<leader>xq", function() trouble.open("quickfix") end, { desc = "Open Quickfix Window" })
+map("n", "<leader>xl", function() trouble.open("loclist") end, { desc = "Open loclist" })
+map("n", "gR", function() trouble.open("lsp_references") end, { desc = "Open LSP Reference" })
+local troubleProvider = require("trouble.providers.telescope")
+map("n", "<leader>xt", troubleProvider.open_with_trouble, { desc = "Open with Trouble" })
 
 -- Telescope
 local telescopeBuiltin = require("telescope.builtin")
