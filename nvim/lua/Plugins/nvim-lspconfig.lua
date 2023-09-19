@@ -21,7 +21,7 @@ return {
         end,
       },
       "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim"
+      "williamboman/mason-lspconfig.nvim",
     },
     config = function()
       local _augroups = {}

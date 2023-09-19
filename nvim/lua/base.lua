@@ -61,10 +61,10 @@ vim.o.backup = false
 This option is a list of comma-separated names.
 ]]
 if vim.fn.has("macunix") == 1 then -- MacOs
-	vim.opt.clipboard:append({ "unnamedplus" })
+  vim.opt.clipboard:append({ "unnamedplus" })
 end
 if vim.fn.has("win32") == 1 then -- Windows
-	vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
+  vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
 end
 
 --[[
@@ -383,7 +383,7 @@ It is a list of flags:
 	    shm=at	Abbreviation, and truncate message when necessary.
 ]]
 vim.opt.shortmess:append({
-	W = true, I = true, c = true
+  W = true, I = true, c = true
 })
 
 --[[

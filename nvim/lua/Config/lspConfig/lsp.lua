@@ -6,6 +6,8 @@ local lspconfig = require("lspconfig")
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_lua").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
+
 
 luasnip.config.setup({})
 
@@ -98,7 +100,11 @@ lspconfig.emmet_ls.setup({
 })
 
 local cmp = require("cmp")
+local defaults = require("cmp.config.default")
 cmp.setup({
+  completion = {
+    completeopt = "menu,menuone,noinsert"
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)

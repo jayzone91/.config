@@ -47,6 +47,8 @@ map("n",
   "<cmd>NvimTreeToggle<cr>",
   { desc = "Open Filebrowser" })
 
+
+
 -- Trouble
 map("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
@@ -60,8 +62,16 @@ map("n", "gr", vim.lsp.buf.references, { desc = "[G]oto [R]eferences" })
 local telescopeBuiltin = require("telescope.builtin")
 map("n", "<leader>ff", telescopeBuiltin.find_files, { desc = "Find Files" })
 map("n", "<leader>fg", telescopeBuiltin.live_grep, { desc = "Live Grep" })
+map("n", "<leader>fo", telescopeBuiltin.oldfiles, { desc = "Recently opened Files" })
 map("n", "<leader><space>", telescopeBuiltin.buffers, { desc = "Show Buffer" })
-map("n", "<leader>fb", telescopeBuiltin.current_buffer_fuzzy_find, { desc = "Search Curretn Buffer" })
+map("n", "<leader>fb",
+  function()
+    telescopeBuiltin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
+      winblend = 10,
+      previewer = false,
+    })
+  end,
+  { desc = "Search Current Buffer" })
 
 -- Zen Mode
 map("n", "<leader>zz",
