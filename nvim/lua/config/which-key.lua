@@ -35,6 +35,9 @@ require("which-key").register({
     },
     m = {
       name = "+Markdown"
+    },
+    l = {
+      name = "+Legendary Find"
     }
   }
 })

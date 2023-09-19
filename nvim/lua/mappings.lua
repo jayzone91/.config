@@ -89,3 +89,10 @@ map("n", "<leader>hc", function() require("harpoon.mark").clear_all() end, { des
 
 -- Markdown Preview
 map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown Preview" })
+
+-- Legendary
+map("n", "<leader>ls", "<cmd>Legendary<cr>", { desc = "Open Legendary" })
+map("n", "<leader>lk", "<cmd>Legendary keymaps<cr>", { desc = "Search Keymaps" })
+map("n", "<leader>lc", "<cmd>Legendary commands<cr>", { desc = "Search Commands" })
+map("n", "<leader>lf", "<cmd>Legendary function<cr>", { desc = "Search Functions" })
+map("n", "<leader>la", "<cmd>Legendary autocmds<cr>", { desc = "Search Autocmds" })
