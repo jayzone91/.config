@@ -38,6 +38,9 @@ require("which-key").register({
     },
     l = {
       name = "+Legendary Find"
+    },
+    i = {
+      name = "+Iron DAP"
     }
   }
 })

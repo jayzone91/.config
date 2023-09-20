@@ -59,3 +59,18 @@ vim.api.nvim_create_autocmd("FileType", {
       { buffer = event.buf, silent = true })
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    -- Automatically capitalize boolean values.
+    vim.cmd.inoreabbrev("<buffer> true True")
+    vim.cmd.inoreabbrev("<buffer> false False")
+    -- Fix habbits from other languages
+    vim.cmd.inoreabbrev("<buffer> // #")
+    vim.cmd.inoreabbrev("<buffer> -- #")
+    vim.cmd.inoreabbrev("<buffer> null None")
+    vim.cmd.inoreabbrev("<buffer> none None")
+    vim.cmd.inoreabbrev("<buffer> nil None")
+  end
+})

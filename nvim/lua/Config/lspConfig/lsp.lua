@@ -57,7 +57,10 @@ lspconfig.eslint.setup({
 
 lspconfig.tsserver.setup({})
 
-lspconfig.pyright.setup({})
+lspconfig.pyright.setup({
+  capabilities = capacilities,
+  on_attach = on_attach
+})
 
 lspconfig.rust_analyzer.setup({
   settings = {
@@ -74,6 +77,20 @@ lspconfig.marksman.setup({})
 lspconfig.prismals.setup({})
 
 lspconfig.clangd.setup({})
+
+lspconfig.taplo.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+lspconfig.ruff_lsp.setup({
+  settings = {
+    organizeImports = false,
+  },
+  on_attach = function(client)
+    client.server_capabilities.hoverProvider = false
+  end,
+})
 
 lspconfig.emmet_ls.setup({
   on_attach = on_attach,
