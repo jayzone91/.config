@@ -1,4 +1,7 @@
+local replh = require("nvim-dap-repl-highlights")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+replh.setup()
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 

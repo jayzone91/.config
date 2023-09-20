@@ -28,7 +28,7 @@ require("which-key").register({
       name = "+harpoon"
     },
     d = {
-      name = "+The Ducks"
+      name = "+DAP"
     },
     t = {
       name = "+Types"
