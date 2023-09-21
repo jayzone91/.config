@@ -547,6 +547,8 @@ See also 'formatoptions' and ins-textwidth.
 ]]
 vim.o.wrapmargin = 75
 
+vim.o.spell = true
+vim.o.spelllang = "de,en_us"
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])

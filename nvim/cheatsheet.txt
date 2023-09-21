@@ -6,3 +6,4 @@ https://github.com/williamboman/mason-lspconfig.nvim
 
 LSP Plugins
 https://github.com/neovim/nvim-lspconfig/wiki/Language-specific-plugins
+
