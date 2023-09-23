@@ -3,5 +3,5 @@ return {
   dependencies = {
     'mfussenegger/nvim-dap',
     'nvim-treesitter/nvim-treesitter'
-  }
+  },
 }

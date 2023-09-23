@@ -2,7 +2,15 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        cond = function()
+          return vim.fn.executable "make" == 1
+        end,
+      },
+    },
     opts = function(_, opts)
       local function flash(prompt_bufnr)
         require("flash").jump({
@@ -25,13 +33,6 @@ return {
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         mappings = { n = { s = flash }, i = { ["<c-f>"] = flash }, }
       })
-    end,
-  },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-    cond = function()
-      return vim.fn.executable "make" == 1
     end,
   },
 }

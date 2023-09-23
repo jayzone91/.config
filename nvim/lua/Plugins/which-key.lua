@@ -18,6 +18,6 @@ return {
         ["<esc>"] = "ESC",
         ["<bs>"] = "Backspace",
       }
-    }
+    },
   }
 }

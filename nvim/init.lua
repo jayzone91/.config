@@ -34,7 +34,10 @@ require("lazy").setup({
   },
 }, {})
 
-require("Config")   -- Load Plugin Config
+require("Config") -- Load Plugin Config
+
+--Load LSP Config
+-- require("Config.lsp")
 
 require("autocmd")  -- Load Autocmds
 
