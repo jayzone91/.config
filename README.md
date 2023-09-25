@@ -14,10 +14,10 @@ See [here](/fish/readme.md)
 
 See [here](/pwsh/readme.md)
 
-### Oh My Posh
+## Oh My Posh
 
 See [here](/ohmyposh/readme.md)
 
-### Terminal
+## Windows Terminal
 
 See [here](/terminal/readme.md)
