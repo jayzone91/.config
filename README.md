@@ -13,3 +13,11 @@ See [here](/fish/readme.md)
 ## Powershell
 
 See [here](/pwsh/readme.md)
+
+### Oh My Posh
+
+See [here](/ohmyposh/readme.md)
+
+### Terminal
+
+See [here](/terminal/readme.md)
