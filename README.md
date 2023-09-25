@@ -1,11 +1,15 @@
 # My .config files.
 
-TODO: Create Readme, add Screenshots, add installation instructions and prerequisit list.
+My personal config files for MacOs and Windows
 
 ## NeoVim
 
-See [here](nvim/readme.md)
+See [here](/nvim/readme.md)
 
 ## Fish Shell
 
+See [here](/fish/readme.md)
+
 ## Powershell
+
+See [here](/pwsh/readme.md)
