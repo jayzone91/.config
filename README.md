@@ -4,9 +4,8 @@ TODO: Create Readme, add Screenshots, add installation instructions and prerequi
 
 ## NeoVim
 
+See [here](/nvim/readme.md)
 
 ## Fish Shell
 
-
 ## Powershell
-
