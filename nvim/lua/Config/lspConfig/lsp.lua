@@ -213,6 +213,16 @@ lspconfig.emmet_ls.setup({
   },
 })
 
+lspconfig.cssls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig.sqlls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 local cmp = require("cmp")
 local defaults = require("cmp.config.default")
 cmp.setup({

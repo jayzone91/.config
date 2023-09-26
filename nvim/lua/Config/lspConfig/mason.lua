@@ -9,7 +9,9 @@ require("mason-lspconfig").setup({
     "marksman",
     "prismals",
     "clangd",
-    "emmet_ls"
+    "emmet_ls",
+    "sqlls",
+    "cssls",
   },
   automatic_installation = true,
 })
