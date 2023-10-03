@@ -2,17 +2,40 @@
   "$schema" : "https:\/\/schema.linearmouse.app\/0.9.3",
   "schemes" : [
     {
-      "buttons" : {
-        "universalBackForward" : true
-      },
       "if" : {
         "device" : {
           "productName" : "MX Master",
-          "serialNumber" : "8A1F76D04022F350",
           "productID" : "0xb017",
+          "serialNumber" : "8A1F76D04022F350",
           "category" : "mouse",
           "vendorID" : "0x46d"
         }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0xb01d",
+          "vendorID" : "0x46d",
+          "serialNumber" : "AE902B890E7FDE6F",
+          "category" : "mouse",
+          "productName" : "MX Ergo"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "pointer" : {
+        "speed" : 0.1007,
+        "disableAcceleration" : false
       }
     }
   ]
