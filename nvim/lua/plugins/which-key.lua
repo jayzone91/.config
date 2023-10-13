@@ -6,7 +6,7 @@ return {
     defaults = {
       mode = { "n", "v" },
       ["<leader>f"] = { name = "+file/find" },
-      ["<leader>q"] = { name = "+quit" },
+      ["<leader>q"] = { name = "+quit" }
     }
   },
   config = function(_, opts)

@@ -3,6 +3,7 @@ if status is-interactive
   nvm use lts
   brew update
   brew upgrade
+  fish_config theme choose "Rosé Pine"
   clear
   pwd
   exa -l -g --icons --color auto
@@ -32,6 +33,7 @@ function convertImages -d "Converts all Images in a given Folder into WebP Forma
   end
   cd $VORHER
 end
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

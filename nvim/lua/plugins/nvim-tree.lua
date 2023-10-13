@@ -1,3 +1,5 @@
+-- A File Explorer For Neovim Written In Lua
+
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = "nvim-tree/nvim-web-devicons",

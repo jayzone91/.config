@@ -1,33 +1,36 @@
--- Core Config
-require("core")
+require("base")
+require("mappings")
+require("autocmds")
 
--- Lazy
+----------------------------
+--- Lazy Package Manager ---
+----------------------------
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  -- bootstrap lazy.nvim
-  -- stylua: ignore
   vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazypath })
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    { import = "plugins" },
+    -- Your plugins will be read from the lua/plugins folder
+    { import = "plugins" }
   },
   defaults = {
     lazy = false,
-    version = false,            -- always use the latest git commit
+    version = false            -- always use latest git commit
   },
-  checker = { enabled = true }, -- auto check for plugin updates
+  checker = { enable = true }, -- check for Updates on start
   performance = {
     rtp = {
-      -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
         "tarPlugin",
@@ -39,5 +42,5 @@ require("lazy").setup({
   },
 })
 
-require("autocmds")
-require("mappings")
+require("config.lsp")
+require("config.treesitter")

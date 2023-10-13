@@ -1,3 +1,6 @@
+-- Gaze deeply into unknown regions using the power of the moon.
+
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
