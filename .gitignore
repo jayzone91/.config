@@ -1,6 +1,8 @@
 fish/completions/
 fish/fish_variables
 fish/functions/
+fish/node_modules
+fish/package-lock.json
 iterm2/AppSupport
 nvim/lazy-lock.json
 raycast/
@@ -9,3 +11,4 @@ gtk-2.0/
 **/**/.DS_Store
 
 Wondershare
+

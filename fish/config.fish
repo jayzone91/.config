@@ -1,6 +1,7 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
   nvm use lts
+  npm install -g npm@latest
   brew update
   brew upgrade
   fish_config theme choose "Rosé Pine"
