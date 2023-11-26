@@ -1,12 +1,13 @@
 return {
-  {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = function()
-      return {
-        transparent = true,
-      }
-    end,
-  },
+  "rose-pine/neovim",
+  name = "rose-pine",
+  priority = 1000,
+  config = function()
+    require("rose-pine").setup({
+      variant = "moon",
+      dark_variant = "moon",
+      disable_background = true,
+    })
+    vim.cmd.colorscheme("rose-pine")
+  end,
 }

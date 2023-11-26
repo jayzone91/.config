@@ -1,67 +1,113 @@
 return {
-  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "astro",
-        "cmake",
-        "cpp",
-        "css",
-        "fish",
-        "gitignore",
-        "go",
-        "graphql",
-        "http",
-        "java",
-        "php",
-        "rust",
-        "scss",
-        "sql",
-        "svelte",
+  "nvim-treesitter/nvim-treesitter",
+  version = false,
+  build = ":TSUpdate",
+  event = "VeryLazy",
+  lazy = true,
+  init = function()
+    require("nvim-treesitter.query_predicates")
+  end,
+  dependencies = {
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      config = function()
+        local move = require("nvim-treesitter.textobjects.move")
+        local configs = require("nvim-treesitter.configs")
+        for name, fn in ipairs(move) do
+          if name:find("goto") == 1 then
+            move[name] = function(q, ...)
+              if vim.wo.diff then
+                local config = configs.get_module("textobjects.move")[name]
+                for key, query in ipairs(config or {}) do
+                  if q == query and key:find("[%]%[][cC]") then
+                    vim.cmd("normal! " .. key)
+                    return
+                  end
+                end
+              end
+              return fn(q, ...)
+            end
+          end
+        end
+      end,
+    },
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {},
+    },
+  },
+  cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+  keys = {
+    { "<c-space>", desc = "Increment Selection" },
+    { "<bs>", desc = "Decrement Selection", mode = "x" },
+  },
+  opts = {
+    highlight = { enable = true },
+    indent = { enable = true },
+    ensure_installed = {
+      "bash",
+      "c",
+      "diff",
+      "html",
+      "javascript",
+      "jsdoc",
+      "json",
+      "jsonc",
+      "lua",
+      "luadoc",
+      "luap",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "query",
+      "regex",
+      "toml",
+      "prisma",
+      "tsx",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "yaml",
+    },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<c-space>",
+        node_incremental = "<c-space>",
+        scope_incremental = false,
+        node_decremantal = "<bs>",
       },
-
-      -- matchup = {
-      -- 	enable = true,
-      -- },
-
-      -- https://github.com/nvim-treesitter/playground#query-linter
-      query_linter = {
+    },
+    text_objects = {
+      move = {
         enable = true,
-        use_virtual_text = true,
-        lint_events = { "BufWrite", "CursorHold" },
-      },
-
-      playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = true, -- Whether the query persists across vim sessions
-        keybindings = {
-          toggle_query_editor = "o",
-          toggle_hl_groups = "i",
-          toggle_injected_languages = "t",
-          toggle_anonymous_nodes = "a",
-          toggle_language_display = "I",
-          focus_language = "f",
-          unfocus_language = "F",
-          update = "R",
-          goto_node = "<cr>",
-          show_help = "?",
+        goto_next_start = {
+          ["]f"] = "@function.outer",
+          ["]c"] = "@class.outer",
+        },
+        goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
+        goto_previous_start = {
+          ["[f"] = "@function.outer",
+          ["[c"] = "@class.outer",
+        },
+        goto_previous_end = {
+          ["[F"] = "@function.outer",
+          ["[C"] = "@class.outer",
         },
       },
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      -- MDX
-      vim.filetype.add({
-        extension = {
-          mdx = "mdx",
-        },
-      })
-      vim.treesitter.language.register("markdown", "mdx")
-    end,
   },
+  config = function(_, opts)
+    if type(opts.ensure_installed) == "table" then
+      local added = {}
+      opts.ensure_installed = vim.tbl_filter(function(lang)
+        if added[lang] then
+          return false
+        end
+        added[lang] = true
+        return true
+      end, opts.ensure_installed)
+    end
+    require("nvim-treesitter.configs").setup(opts)
+  end,
 }
