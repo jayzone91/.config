@@ -79,7 +79,7 @@ vim.keymap.set(
 )
 
 -- MacOnly Cause CTRL is mapped to another function
-if vim.fn.has("macunix") then
+if vim.fn.has("macunix") == 1 then
   map("n", "<leader><right>", "<C-w>l", "Go to right window")
   map("n", "<leader><left>", "<C-w>h", "Go to left window")
 end
