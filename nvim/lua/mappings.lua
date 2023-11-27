@@ -78,6 +78,12 @@ vim.keymap.set(
   { desc = "Go to right window", remap = true }
 )
 
+-- MacOnly Cause CTRL is mapped to another function
+if vim.fn.has("macunix") then
+  map("n", "<leader><right>", "<C-w>l", "Go to right window")
+  map("n", "<leader><left>", "<C-w>h", "Go to left window")
+end
+
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", "Move down")
 map("n", "<A-Down>", "<cmd>m .+1<cr>==", "Move down")
