@@ -1,10 +1,15 @@
-& ([ScriptBlock]::Create((oh-my-posh init pwsh --config "~\.config\ohmyposh\theme.omp.json" --print) -join "`n"))
+$ENV:STARSHIP_CONFIG = "C:\Users\johannes.kirchner\starship.toml"
+Invoke-Expression (&starship init powershell)
 Import-Module -Name Terminal-Icons
 
 # Alias
 Set-Alias -Name vim -Value nvim
 
 # Utilities
+
+function :q () {
+  exit
+}
 
 function .. () {
   cd ..
@@ -26,23 +31,47 @@ function which ($command) {
 function Edit-Profile () {
 	vim $profile
 }
-function Reload () {
-	@(
-		$profile.AllUsersAllHosts,
-		$profile.AllUsersCurrentHost,
-		$profile.CurrentUserAllHosts,
-		$profile.CurrentUserCurrentHost
-	) | % {
-		if(Test-Path $_){
-			Write-Verbose "Running $_"
-			. $_
-			}
-	}
+
+function Open ($param) {
+  if ($param){
+    Invoke-Item $param
+  }else{
+    Invoke-Item .
+  }
 }
 
-# Open Url
-function open ($command) {
-	start chrome $command
+function ShowMarkdown ($param) {
+  if ($param){
+    grip $param
+  }else{
+    return
+  }
+}
+
+function MakePDF ($param) {
+  if ($param) {
+    $mdFile = Get-ChildItem $param
+    $nameArr = $mdFile.Name.Split(".")
+    $pdf = ""
+    if ($nameArr.Length -gt 2){
+      $i = 0
+      $end = $nameArr.Length
+      $end -= 1
+      while ($i -lt $end){
+        $pdf += $nameArr[$i]
+        $pdf += "_"
+        $i++
+      }
+    }
+    else{
+      $pdf = $nameArr[0]
+    }
+    $pdf += ".pdf"
+    "Processing " + $mdFile.Name + " to " + $pdf
+    pandoc $mdFile.Name -s -f markdown -t pdf -o $pdf
+  }else{
+    return
+  }
 }
 
 function ll () {
