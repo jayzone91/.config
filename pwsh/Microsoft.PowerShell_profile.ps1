@@ -1,4 +1,4 @@
-$ENV:STARSHIP_CONFIG = "C:\Users\johannes.kirchner\starship.toml"
+$ENV:STARSHIP_CONFIG = "PATH/TO\starship.toml"
 Invoke-Expression (&starship init powershell)
 Import-Module -Name Terminal-Icons
 
