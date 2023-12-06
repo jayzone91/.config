@@ -9,6 +9,18 @@ return {
       build = "make",
     },
     "nvim-telescope/telescope-file-browser.nvim",
+    {
+      "LukasPietzschmann/telescope-tabs",
+      config = function()
+        require("telescope-tabs").setup()
+      end,
+    },
+    {
+      "piersolenski/telescope-import.nvim",
+    },
+    {
+      "benfowler/telescope-luasnip.nvim",
+    },
   },
   config = function()
     require("telescope").setup({
@@ -25,10 +37,28 @@ return {
           case_mode = "smart_case", -- or "ignore_case" or "respect_case"
           -- the default case_mode is "smart_case"
         },
+        import = {
+          insert_at_top = true,
+          custom_languages = {
+            {
+              regex = [[^(?:import(?:[\"'\s]*([\w*{}\n, ]+)from\s*)?[\"'\s](.*?)[\"'\s].*)]],
+              filetypes = {
+                "typescript",
+                "typescriptreact",
+                "javascript",
+                "react",
+              },
+              extensions = { "js", "ts" },
+            },
+          },
+        },
       },
     })
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("file_browser")
+    require("telescope").load_extension("telescope-tabs")
+    require("telescope").load_extension("import")
+    require("telescope").load_extension("luasnip")
 
     local builtin = require("telescope.builtin")
 
@@ -57,5 +87,10 @@ return {
         select_buffer = true,
       })
     end, "Open File Explorer")
+    map("n", "<leader>ft", function()
+      require("telescope-tabs").list_tabs()
+    end, "List Tabs")
+    map("n", "<leader>fi", "<cmd>Telescope import<cr>", "Show Imports")
+    map("n", "<leader>fs", "<cmd>Telescope luasnip<cr>", "Show Snippets")
   end,
 }
