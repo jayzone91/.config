@@ -1,0 +1,9 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/jayzone91/nvim
+[submodule "fish"]
+	path = fish
+	url = https://github.com/jayzone91/fish
+[submodule "starship"]
+	path = starship
+	url = https://github.com/jayzone91/starship
