@@ -7,3 +7,9 @@
 [submodule "starship"]
 	path = starship
 	url = https://github.com/jayzone91/starship
+[submodule "PowerShell"]
+	path = PowerShell
+	url = https://github.com/jayzone91/PowerShell
+[submodule "WindowsTerminal"]
+	path = WindowsTerminal
+	url = https://github.com/jayzone91/WindowsTerminal
