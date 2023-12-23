@@ -1,1 +1,0 @@
-# Oh my Posh Config
