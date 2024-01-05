@@ -13,3 +13,6 @@
 [submodule "WindowsTerminal"]
 	path = WindowsTerminal
 	url = https://github.com/jayzone91/WindowsTerminal
+[submodule "workspacer"]
+	path = workspacer
+	url = https://github.com/jayzone91/workspacer
