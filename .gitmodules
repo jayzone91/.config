@@ -16,3 +16,12 @@
 [submodule "workspacer"]
 	path = workspacer
 	url = https://github.com/jayzone91/workspacer
+[submodule "sketchybar"]
+	path = sketchybar
+	url = https://github.com/jayzone91/sketchybar
+[submodule "skhd"]
+	path = skhd
+	url = https://github.com/jayzone91/skhd
+[submodule "yabai"]
+	path = yabai
+	url = https://github.com/jayzone91/yabai
